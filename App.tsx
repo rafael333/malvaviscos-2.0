@@ -77,7 +77,12 @@ const App: React.FC = () => {
         />
       )}
       {currentPage === 'lesson' && (
-        <LessonDetails onBack={navigateToHome} lessonId={selectedLessonId} onCoursesClick={navigateToCourses} />
+        <LessonDetails
+          onBack={navigateToHome}
+          lessonId={selectedLessonId}
+          onCoursesClick={navigateToCourses}
+          onFavoritesClick={navigateToFavorites}
+        />
       )}
       {currentPage === 'profile' && (
         <Profile

@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Malvaviscos Caseros</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <style>
+        /* Fonts Setup */
+
+        @font-face {
+            font-family: 'Poppins-Bold';
+            src: url('https://assets-persist.lovart.ai/agent-static-assets/Alibaba-PuHuiTi-Bold.otf');
+        }
+
+        @font-face {
+            font-family: 'Nunito-Regular';
+            src: url('https://assets-persist.lovart.ai/agent-static-assets/MiSans-Regular.ttf');
+        }
+
+        @font-face {
+            font-family: 'Nunito-SemiBold';
+            src: url('https://assets-persist.lovart.ai/agent-static-assets/MiSans-Semibold.ttf');
+        }
+
+        @font-face {
+            font-family: 'Handwritten';
+            src: url('https://assets-persist.lovart.ai/agent-static-assets/ZCOOLKuaiLe-Regular.ttf');
+        }
+
+        /* Reset & Base */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            max-width: 100vw;
+            margin: 0 auto;
+            background: linear-gradient(180deg, #fff0f5 0%, #f3e5f5 50%, #e0ffff 100%);
+            font-family: 'Nunito-Regular', sans-serif;
+            color: #4a4a4a;
+            overflow-x: hidden;
+        }
+
+        /* Color Variables */
+
+        :root {
+            --pink: #FF69B4;
+            --light-pink: #FFB7C5;
+            --purple: #DDA0DD;
+            --dark-purple: #BA55D3;
+            --yellow: #FFD700;
+            --green: #98FB98;
+            --blue: #87CEEB;
+            --text-main: #4a4a4a;
+            --white: #ffffff;
+        }
+
+        /* Animations */
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        @keyframes pulse-alert {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7);
+            }
+
+            70% {
+                transform: scale(1.02);
+                box-shadow: 0 0 0 20px rgba(255, 215, 0, 0);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 215, 0, 0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce-check {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-10px);
+            }
+
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        @keyframes shine {
+            0% {
+                left: -100%;
+            }
+
+            20% {
+                left: 100%;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+
+        /* Layout Classes */
+
+        .container {
+            width: 100%;
+            padding: 60px 100px;
+        }
+
+        .section-title {
+            font-family: 'Poppins-Bold';
+            font-size: 64px;
+            color: var(--dark-purple);
+            text-align: center;
+            margin-bottom: 50px;
+            text-shadow: 2px 2px 0px #fff;
+        }
+
+        /* Header */
+
+        header {
+            text-align: center;
+            padding: 80px 0;
+            animation: slideInUp 1s ease-out;
+        }
+
+        .header-emoji {
+            font-size: 180px;
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+            filter: drop-shadow(0 20px 30px rgba(255, 105, 180, 0.4));
+        }
+
+        .main-title {
+            font-family: 'Poppins-Bold';
+            font-size: 160px;
+            line-height: 1.1;
+            color: var(--pink);
+            text-shadow: 5px 5px 0px #fff, 10px 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .sub-title {
+            font-family: 'Handwritten';
+            font-size: 100px;
+            color: var(--purple);
+            margin-top: -20px;
+        }
+
+        .guide-tag {
+            background: var(--blue);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-family: 'Poppins-Bold';
+            font-size: 32px;
+            display: inline-block;
+            margin-top: 30px;
+            box-shadow: 0 10px 20px rgba(135, 206, 235, 0.4);
+
+            /* Shine Effect Props */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .guide-tag::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+            animation: shine 3s infinite;
+        }
+
+        /* Alert Box */
+
+        .alert-box {
+            background: #FFF9C4;
+            border: 4px solid var(--yellow);
+            border-radius: 30px;
+            padding: 40px;
+            margin: 40px 0;
+            text-align: center;
+            animation: pulse-alert 3s infinite;
+        }
+
+        .alert-text {
+            font-size: 32px;
+            color: #F57F17;
+            font-weight: bold;
+            line-height: 1.5;
+        }
+
+        /* Ingredients */
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 30px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card-header {
+            font-family: 'Poppins-Bold';
+            font-size: 36px;
+            color: var(--pink);
+            margin-bottom: 20px;
+            border-bottom: 3px dashed var(--light-pink);
+            padding-bottom: 15px;
+        }
+
+        .ingredient-list {
+            list-style: none;
+        }
+
+        .ingredient-item {
+            font-size: 28px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-family: 'Nunito-SemiBold';
+        }
+
+        .ingredient-item i {
+            color: var(--green);
+            margin-right: 15px;
+            font-size: 32px;
+        }
+
+        /* Recipe Steps */
+
+        .step-container {
+            margin-bottom: 80px;
+        }
+
+        .step-card {
+            background: white;
+            border-radius: 40px;
+            padding: 50px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+            border-left: 20px solid var(--pink);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .step-number {
+            position: absolute;
+            right: 40px;
+            top: 20px;
+            font-family: 'Poppins-Bold';
+            font-size: 120px;
+            color: rgba(255, 105, 180, 0.1);
+        }
+
+        .step-title {
+            font-family: 'Poppins-Bold';
+            font-size: 48px;
+            color: var(--purple);
+            margin-bottom: 30px;
+        }
+
+        .step-content {
+            font-size: 32px;
+            line-height: 1.6;
+        }
+
+        .tip-box {
+            background: #E1F5FE;
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 25px;
+            border-left: 10px solid var(--blue);
+        }
+
+        .tip-title {
+            font-weight: bold;
+            color: #0277BD;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Dough Tabs */
+
+        .tabs-container {
+            background: white;
+            border-radius: 40px;
+            padding: 50px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            margin-bottom: 100px;
+        }
+
+        .tab-headers {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 30px;
+            font-family: 'Poppins-Bold';
+            font-size: 36px;
+            background: #f0f0f0;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: #888;
+        }
+
+        .tab-btn.active {
+            background: var(--pink);
+            color: white;
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(255, 105, 180, 0.3);
+        }
+
+        .tab-content {
+            display: none;
+            font-size: 30px;
+            line-height: 1.6;
+            animation: slideInUp 0.5s;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Accordion (Rabbit & Character) */
+
+        .accordion-section {
+            margin-bottom: 100px;
+        }
+
+        .accordion-item {
+            background: white;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+
+        .accordion-header {
+            padding: 35px 50px;
+            background: linear-gradient(90deg, #fff 0%, #fff0f5 100%);
+            font-family: 'Poppins-Bold';
+            font-size: 36px;
+            color: var(--text-main);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .accordion-header:hover {
+            background: #fff0f5;
+        }
+
+        .accordion-icon {
+            font-size: 40px;
+            color: var(--pink);
+            transition: transform 0.3s;
+        }
+
+        .accordion-header.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+            background: #fff;
+        }
+
+        .accordion-content {
+            padding: 50px;
+            font-size: 30px;
+            line-height: 1.6;
+            border-top: 2px dashed #eee;
+            display: flex;
+            gap: 50px;
+        }
+
+        .visual-aid {
+            flex: 1;
+            background: #f9f9f9;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 300px;
+            position: relative;
+        }
+
+        .text-aid {
+            flex: 2;
+        }
+
+        /* CSS Shapes for Visual Aids */
+
+        .shape-circle {
+            width: 150px;
+            height: 150px;
+            background: var(--pink);
+            border-radius: 50%;
+            opacity: 0.6;
+        }
+
+        .shape-drop {
+            width: 100px;
+            height: 150px;
+            background: var(--pink);
+            border-radius: 0 50% 50% 50%;
+            transform: rotate(45deg);
+            opacity: 0.6;
+        }
+
+        .shape-cone {
+            width: 0;
+            height: 0;
+            border-left: 75px solid transparent;
+            border-right: 75px solid transparent;
+            border-bottom: 150px solid var(--pink);
+            opacity: 0.6;
+        }
+
+        .shape-cyl {
+            width: 100px;
+            height: 150px;
+            background: var(--pink);
+            border-radius: 20px;
+            opacity: 0.6;
+        }
+
+        /* Flip Cards (Flowers) */
+
+        .flower-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 100px;
+        }
+
+        .flip-card {
+            background-color: transparent;
+            height: 600px;
+            perspective: 1000px;
+        }
+
+        .flip-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-radius: 40px;
+            cursor: pointer;
+        }
+
+        .flip-card.flipped .flip-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-front,
+        .flip-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 40px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .flip-front {
+            background: linear-gradient(135deg, #ffffff 0%, #fff5f8 100%);
+        }
+
+        .flip-back {
+            background: white;
+            color: #333;
+            transform: rotateY(180deg);
+            overflow-y: auto;
+            align-items: flex-start;
+            text-align: left;
+            border: 4px solid var(--light-pink);
+        }
+
+        .flower-icon {
+            font-size: 150px;
+            color: var(--light-pink);
+            margin-bottom: 30px;
+        }
+
+        .flower-title {
+            font-family: 'Poppins-Bold';
+            font-size: 40px;
+            color: var(--text-main);
+        }
+
+        .tap-hint {
+            margin-top: 20px;
+            color: var(--pink);
+            font-weight: bold;
+            font-size: 24px;
+            animation: bounce-check 2s infinite;
+        }
+
+        /* Timeline */
+
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: #ddd;
+            z-index: 0;
+            transform: translateY(-50%);
+        }
+
+        .time-point {
+            position: relative;
+            z-index: 1;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            width: 28%;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border: 4px solid var(--purple);
+        }
+
+        .time-val {
+            font-family: 'Poppins-Bold';
+            font-size: 48px;
+            color: var(--purple);
+            display: block;
+        }
+
+        .time-desc {
+            font-size: 24px;
+            color: #666;
+        }
+
+        /* Footer / Checkboxes */
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .check-item {
+            background: #F0F4C3;
+            padding: 25px 40px;
+            border-radius: 50px;
+            font-size: 28px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .check-item i {
+            color: #827717;
+            font-size: 36px;
+        }
+
+        /* Storage */
+
+        .storage-container {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 100px;
+        }
+
+        .storage-card {
+            flex: 1;
+            background: #E8EAF6;
+            padding: 40px;
+            border-radius: 30px;
+            text-align: center;
+        }
+
+        .storage-icon {
+            font-size: 80px;
+            color: #3F51B5;
+            margin-bottom: 20px;
+        }
+
+        .storage-text {
+            font-size: 28px;
+            font-weight: bold;
+            color: #3949AB;
+        }
+
+        .footer-logo {
+            text-align: center;
+            font-family: 'Handwritten';
+            font-size: 60px;
+            color: var(--pink);
+            margin-bottom: 50px;
+            opacity: 0.7;
+        }
+
+        /* Specific text styles for detail */
+
+        .highlight {
+            color: var(--pink);
+            font-weight: bold;
+        }
+
+        .blue-text {
+            color: var(--blue);
+            font-weight: bold;
+        }
+
+        .list-dot {
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .list-dot::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--pink);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+            }
+
+            header {
+                padding: 40px 0;
+            }
+
+            .header-emoji {
+                font-size: 100px;
+            }
+
+            .main-title {
+                font-size: 60px;
+            }
+
+            .sub-title {
+                font-size: 40px;
+                margin-top: -10px;
+            }
+
+            .guide-tag {
+                font-size: 18px;
+                padding: 10px 25px;
+            }
+
+            .section-title {
+                font-size: 36px;
+                margin-bottom: 30px;
+            }
+
+            .grid-4,
+            .tips-grid,
+            .flower-grid,
+            .storage-container {
+                grid-template-columns: 1fr;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .timeline {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .timeline::before {
+                width: 4px;
+                height: 100%;
+                left: 50%;
+                top: 0;
+                transform: translateX(-50%);
+            }
+
+            .time-point {
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            .accordion-content {
+                flex-direction: column;
+                padding: 20px;
+                gap: 20px;
+            }
+
+            .step-card {
+                padding: 25px;
+                border-left-width: 10px;
+            }
+
+            .step-number {
+                font-size: 60px;
+                right: 20px;
+                top: 10px;
+            }
+
+            .step-title {
+                font-size: 28px;
+                padding-right: 40px;
+                /* Space for number */
+            }
+
+            .step-content,
+            .tab-content,
+            .accordion-content,
+            .alert-text {
+                font-size: 18px;
+            }
+
+            .tab-headers {
+                flex-direction: column;
+            }
+
+            .tab-btn {
+                font-size: 20px;
+                padding: 15px;
+            }
+
+            .flip-card {
+                height: 400px;
+            }
+
+            .flip-front,
+            .flip-back {
+                padding: 20px;
+            }
+
+            .flower-icon {
+                font-size: 100px;
+            }
+
+            .flower-title {
+                font-size: 28px;
+            }
+
+            .footer-logo {
+                font-size: 40px;
+            }
+
+            .alert-box {
+                padding: 20px;
+            }
+
+            .tip-box {
+                display: block !important;
+                /* Force vertical stacking */
+                padding: 15px;
+                /* Reduced padding */
+                margin-top: 20px;
+            }
+
+            .tip-title {
+                display: flex;
+                width: 100%;
+                font-size: 20px;
+                /* Smaller title */
+                margin-bottom: 5px;
+            }
+
+            .tip-box p {
+                font-size: 16px;
+                /* Smaller text for better fit */
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- HEADER -->
+        <header>
+
+            <div class="main-title">Malvaviscos</div>
+            <div class="sub-title">Caseros</div>
+            <div class="guide-tag">Guía completa sin horno</div>
+        </header>
+
+        <!-- ALERT -->
+        <div class="alert-box">
+            <p class="alert-text">
+                ⚠️ <span style="text-decoration: underline;">IMPORTANTE:</span> Los malvaviscos caseros son sensibles a
+                la humedad. El secreto está en cocinar el almíbar al punto exacto y dejar secar muy bien.
+            </p>
+        </div>
+
+        <!-- INGREDIENTS -->
+        <h2 class="section-title">Ingredientes Exactos</h2>
+        <div class="grid-4">
+            <div class="card">
+                <div class="card-header">1. Hidratar</div>
+                <ul class="ingredient-list">
+                    <li class="ingredient-item"><i class="ri-drop-line"></i> 12g Gelatina</li>
+                    <li class="ingredient-item"><i class="ri-cup-line"></i> 60ml Agua</li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="card-header">2. Almíbar</div>
+                <ul class="ingredient-list">
+                    <li class="ingredient-item"><i class="ri-spoon-line"></i> 200g Azúcar</li>
+                    <li class="ingredient-item"><i class="ri-contrast-drop-line"></i> 120ml Agua</li>
+                    <li class="ingredient-item"><i class="ri-honey-pot-line"></i> 100g Glucosa</li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="card-header">3. Finalizar</div>
+                <ul class="ingredient-list">
+                    <li class="ingredient-item"><i class="ri-magic-line"></i> 1 cdta Vainilla</li>
+                    <li class="ingredient-item"><i class="ri-palette-line"></i> Colorante Gel</li>
+                    <li class="ingredient-item"><i class="ri-shining-line"></i> Pizca de Sal</li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="card-header">4. Espolvorear</div>
+                <ul class="ingredient-list">
+                    <li class="ingredient-item"><i class="ri-snowy-line"></i> 100g Azúcar Glass</li>
+                    <li class="ingredient-item"><i class="ri-seedling-line"></i> 100g Fécula Maíz</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- PASO A PASO -->
+        <h2 class="section-title">Paso a Paso Infalible</h2>
+        <div class="step-container">
+            <!-- Paso 1 -->
+            <div class="step-card">
+                <div class="step-number">01</div>
+                <h3 class="step-title">Hidratar la Gelatina</h3>
+                <div class="step-content">
+                    <p>Mezcla la gelatina en polvo con los 60ml de agua fría en un tazón pequeño. Remueve bien y deja
+                        reposar 5-10 minutos hasta que absorba el líquido y parezca una "esponja".</p>
+                </div>
+            </div>
+
+            <!-- Paso 2 -->
+            <div class="step-card">
+                <div class="step-number">02</div>
+                <h3 class="step-title">El Almíbar (Punto Exacto)</h3>
+                <div class="step-content">
+                    <p>En una olla, coloca azúcar, agua y glucosa. Lleva a fuego medio sin revolver. <br><br>
+                        <strong>🌡️ Temperatura:</strong> 115°C - 118°C (Punto bola blanda).
+                    </p>
+                    <div class="tip-box">
+                        <div class="tip-title"><i class="ri-lightbulb-flash-line"></i> SIN TERMÓMETRO:</div>
+                        <p>Deja caer un poco de almíbar en un vaso con agua fría. Si puedes formar una bolita suave y
+                            flexible con los dedos, ¡está listo!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paso 3 -->
+            <div class="step-card">
+                <div class="step-number">03</div>
+                <h3 class="step-title">Batir, Batir, Batir</h3>
+                <div class="step-content">
+                    <p>Derrite la gelatina hidratada (microondas 15 seg). Colócala en la batidora. Enciende y agrega el
+                        almíbar caliente en forma de hilo por el borde.<br> Sube a velocidad máxima y bate 8-12 minutos
+                        hasta obtener una mezcla blanca, brillante
+                        y que forme picos firmes. Agrega vainilla y colorante al final.</p>
+                </div>
+            </div>
+
+            <!-- Paso 4 -->
+            <div class="step-card">
+                <div class="step-number">04</div>
+                <h3 class="step-title">Dejar Firmar</h3>
+                <div class="step-content">
+                    <p>Engrasa un molde y espolvorea con la mezcla de polvos (Glass + Maicena). Vierte la mezcla, alisa
+                        rápido y cubre con más polvo.<br> ⏳ <strong>Tiempo:</strong> Deja reposar 6-8 horas a
+                        temperatura ambiente.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- MASA MOLDEABLE TABS -->
+        <h2 class="section-title">Técnicas de Moldeado</h2>
+        <div class="tabs-container">
+            <div class="tab-headers">
+                <button class="tab-btn active" onclick="openTab('tab1', this)">🖐️ Opción 1: Con las Manos</button>
+                <button class="tab-btn" onclick="openTab('tab2', this)">🎨 Opción 2: Manga Pastelera</button>
+            </div>
+
+            <div id="tab1" class="tab-content active">
+                <p><strong>Perfecto para figuras detalladas (conejos, personajes).</strong><br><br> 1. Corta un trozo
+                    del malvavisco ya firme (reposado 8h).<br> 2. Amasa con las manos agregando poco a poco la mezcla
+                    "antiadherente" (azúcar glass + maicena).<br> 3. El punto es cuando parece plastilina: no se pega,
+                    se estira sin romperse y mantiene la forma.<br><br>
+                    <span class="highlight">TIP:</span> Si se seca, agrega una gotita de agua.
+                </p>
+            </div>
+            <div id="tab2" class="tab-content">
+                <p><strong>Perfecto para formas rápidas y fluidas.</strong><br><br> 1. Usa la mezcla RECIÉN batida (aún
+                    tibia y fluida).<br> 2. Coloca en manga pastelera con boquilla redonda.<br> 3. Haz las formas
+                    directamente sobre una bandeja con maicena.<br><br>
+                    <span class="highlight">TIP:</span> Trabaja rápido antes de que la gelatina cuaje.
+                </p>
+            </div>
+        </div>
+
+        <!-- CONEJITO SECTION -->
+        <div class="accordion-section">
+            <h2 class="section-title" style="color: var(--pink);">🐰 Moldeado: Conejito Detallado</h2>
+
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>1. CUERPO (Base)</span>
+                    <i class="ri-arrow-down-s-line accordion-icon"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="accordion-content">
+                        <div class="text-aid">
+                            <p><strong>Paso A:</strong> Haz una bolita grande de 3-4 cm (cuerpo). Rueda hasta que esté
+                                lisa.<br>
+                                <strong>Paso B:</strong> Haz una bolita más pequeña de 2 cm (cabeza).<br>
+                                <strong>Unión:</strong> Humedece un pincel con poquita agua, toca el cuerpo y pega la
+                                cabeza encima presionando suavemente.
+                            </p>
+                        </div>
+                        <div class="visual-aid">
+                            <div class="shape-circle" style="width: 120px; height: 120px;"></div>
+                            <div class="shape-circle" style="width: 80px; height: 80px; position:absolute; top: 40px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>2. OREJAS (Forma Gota)</span>
+                    <i class="ri-arrow-down-s-line accordion-icon"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="accordion-content">
+                        <div class="text-aid">
+                            <p>Haz 2 gotitas alargadas. Aplástalas un poco con el dedo pero deja volumen en la base.
+                                <br>
+                                <strong>Tip:</strong> Deja secar la cabeza 10 min antes de pegar las orejas para que no
+                                se caigan por el peso. Pégalas ligeramente hacia atrás.
+                            </p>
+                        </div>
+                        <div class="visual-aid">
+                            <div class="shape-drop" style="margin-right: 20px;"></div>
+                            <div class="shape-drop" style="transform: scaleX(-1) rotate(45deg);"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>3. PATITAS Y COLITA</span>
+                    <i class="ri-arrow-down-s-line accordion-icon"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="accordion-content">
+                        <div class="text-aid">
+                            <p><strong>Patitas:</strong> 2 bolitas pequeñas aplastadas. Pégalas al frente en la base del
+                                cuerpo.<br>
+                                <strong>Colita:</strong> 1 bolita pequeña pegada atrás. Puedes picarla con un palillo
+                                para dar textura de pelaje.
+                            </p>
+                        </div>
+                        <div class="visual-aid">
+                            <div style="display:flex; gap:10px;">
+                                <div class="shape-circle" style="width:50px; height:50px;"></div>
+                                <div class="shape-circle" style="width:50px; height:50px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>4. CARITA (Expresión)</span>
+                    <i class="ri-arrow-down-s-line accordion-icon"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="accordion-content">
+                        <div class="text-aid">
+                            <p><strong>Ojos:</strong> Bolitas negras minúsculas o plumón comestible.<br>
+                                <strong>Nariz:</strong> Triángulo rosa pequeño.<br>
+                                <strong>Boca:</strong> Marca una "Y" invertida con un palillo o dibuja con tinta negra
+                                comestible.
+                            </p>
+                        </div>
+                        <div class="visual-aid">
+                            <span style="font-size: 100px;">🐰</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FLORES FLIP CARDS -->
+        <h2 class="section-title" style="color: var(--dark-purple);">🌺 Moldeado: Flores 3D</h2>
+        <div class="flower-grid">
+
+            <!-- Flor 1 -->
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-inner">
+                    <div class="flip-front">
+                        <i class="ri-flower-line flower-icon"></i>
+                        <div class="flower-title">Flor Simple</div>
+                        <div class="tap-hint">Tap para ver pasos 👆</div>
+                    </div>
+                    <div class="flip-back">
+                        <h3 style="margin-bottom:20px; color:var(--pink);">Pasos:</h3>
+                        <p style="font-size:24px; line-height:1.5;">
+                            1. Haz un centro redondo aplastado.<br> 2. Haz 5 gotitas para pétalos.<br> 3. Pega los
+                            pétalos alrededor del centro.<br> 4. Marca una línea central en cada pétalo con un
+                            palillo.<br>
+                            <br><strong>Secado:</strong> 2-4 horas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flor 2 -->
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-inner">
+                    <div class="flip-front">
+                        <i class="ri-plant-line flower-icon" style="color: #FF8A80;"></i>
+                        <div class="flower-title">Rosa Fácil</div>
+                        <div class="tap-hint">Tap para ver pasos 👆</div>
+                    </div>
+                    <div class="flip-back">
+                        <h3 style="margin-bottom:20px; color:var(--pink);">Pasos (Muy Vendida):</h3>
+                        <p style="font-size:24px; line-height:1.5;">
+                            1. Haz un conito base.<br> 2. Aplasta 6-8 bolitas hasta hacer discos muy finos
+                            (pétalos).<br> 3. Enrolla el primero sobre el cono.<br> 4. Pega los demás intercalados,
+                            abriendo los bordes hacia afuera.<br>
+                            <br><strong>Tip:</strong> Corta la base sobrante.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flor 3 -->
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-inner">
+                    <div class="flip-front">
+                        <i class="ri-leaf-line flower-icon" style="color: var(--green);"></i>
+                        <div class="flower-title">Con Hojas</div>
+                        <div class="tap-hint">Tap para ver pasos 👆</div>
+                    </div>
+                    <div class="flip-back">
+                        <h3 style="margin-bottom:20px; color:var(--green);">Pasos:</h3>
+                        <p style="font-size:24px; line-height:1.5;">
+                            1. Arma una flor simple de 5 pétalos.<br> 2. Haz 2 óvalos verdes y aplástalos.<br> 3. Marca
+                            las venas con un tenedor o palillo.<br> 4. Pega debajo de la flor asomando por los
+                            lados.<br>
+                            <br><strong>Uso:</strong> Ideal para cupcakes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PERSONAJES UNIVERSAL -->
+        <div class="accordion-section">
+            <h2 class="section-title" style="color: var(--blue);">👧 Personajes: Base Universal</h2>
+
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>1. ESTRUCTURA (Cabeza y Cuerpo)</span>
+                    <i class="ri-arrow-down-s-line accordion-icon"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="accordion-content">
+                        <div class="text-aid">
+                            <p><strong>Cabeza:</strong> Bolita perfecta (3cm).<br>
+                                <strong>Cuerpo:</strong> Elige CONO (para vestidos) o CILINDRO (para pantalones).<br>
+                                <strong>Técnica Palillo Interno:</strong> Para figuras grandes, atraviesa el cuerpo con
+                                un palillo dejando 1cm fuera y clava la cabeza ahí. ¡Estructura firme!
+                            </p>
+                        </div>
+                        <div class="visual-aid">
+                            <div style="display:flex; flex-direction:column; align-items:center;">
+                                <div class="shape-circle"
+                                    style="width:80px; height:80px; margin-bottom:-10px; z-index:2;"></div>
+                                <div class="shape-cone"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>2. EXTREMIDADES</span>
+                    <i class="ri-arrow-down-s-line accordion-icon"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="accordion-content">
+                        <div class="text-aid">
+                            <p><strong>Brazos:</strong> Mini cilindros de 2cm. Afina en la "muñeca".<br>
+                                <strong>Piernas:</strong> Cilindros más gruesos. Pega en la base.<br>
+                                <strong>Pies/Zapatos:</strong> Bolitas o pequeños óvalos de otro color.
+                            </p>
+                        </div>
+                        <div class="visual-aid">
+                            <div class="shape-cyl" style="width:30px; height:100px; transform:rotate(-20deg);"></div>
+                            <div class="shape-cyl"
+                                style="width:30px; height:100px; transform:rotate(20deg); margin-left:20px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>3. CABELLO Y ROPA</span>
+                    <i class="ri-arrow-down-s-line accordion-icon"></i>
+                </div>
+                <div class="accordion-body">
+                    <div class="accordion-content">
+                        <div class="text-aid">
+                            <p><strong>Cabello:</strong> Aplana masa delgada y corta tiras (planchitas) o haz un "gorro"
+                                de masa y texturiza.<br>
+                                <strong>Ropa:</strong> Añade capas finas sobre el cuerpo base. Agrega lazos (2 gotitas)
+                                o botones (bolitas mini).<br>
+                                <strong>Color:</strong> Tiñe la masa antes de modelar.
+                            </p>
+                        </div>
+                        <div class="visual-aid">
+                            <i class="ri-shirt-line" style="font-size:150px; color:var(--blue); opacity:0.6;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TIMELINE & TIPS -->
+        <h2 class="section-title">Tiempos y Cuidados</h2>
+
+        <div class="timeline">
+            <div class="time-point">
+                <span class="time-val">30 min</span>
+                <span class="time-desc">Secado entre capas</span>
+            </div>
+            <div class="time-point">
+                <span class="time-val">24 hrs</span>
+                <span class="time-desc">Firme para empacar</span>
+            </div>
+            <div class="time-point">
+                <span class="time-val">48 hrs</span>
+                <span class="time-desc">Dureza total</span>
+            </div>
+        </div>
+
+        <div class="tips-grid">
+            <div class="check-item"><i class="ri-checkbox-circle-fill"></i> Manos bien espolvoreadas</div>
+            <div class="check-item"><i class="ri-checkbox-circle-fill"></i> NUNCA refrigerar (humedad)</div>
+            <div class="check-item"><i class="ri-checkbox-circle-fill"></i> Usa colorante en Gel</div>
+            <div class="check-item"><i class="ri-checkbox-circle-fill"></i> Figuras pequeñas venden mejor</div>
+            <div class="check-item"><i class="ri-checkbox-circle-fill"></i> Evita piezas muy gruesas</div>
+            <div class="check-item"><i class="ri-checkbox-circle-fill"></i> Secar bien antes de bolsa</div>
+        </div>
+
+        <div class="storage-container">
+            <div class="storage-card">
+                <i class="ri-archive-line storage-icon"></i>
+                <div class="storage-text">Caja Hermética</div>
+            </div>
+            <div class="storage-card">
+                <i class="ri-sun-cloudy-line storage-icon"></i>
+                <div class="storage-text">Lejos del Sol</div>
+            </div>
+            <div class="storage-card">
+                <i class="ri-shopping-bag-3-line storage-icon"></i>
+                <div class="storage-text">Bolsa Celofán</div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <script>
+        // Tab Functionality
+        function openTab(tabId, btn) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            // Show selected tab
+            document.getElementById(tabId).classList.add('active');
+
+            // Reset buttons
+            document.querySelectorAll('.tab-btn').forEach(b => {
+                b.classList.remove('active');
+            });
+            // Activate button
+            btn.classList.add('active');
+        }
+
+        // Accordion Functionality
+        function toggleAccordion(element) {
+            const header = element;
+            const body = header.nextElementSibling;
+
+            // Close other accordions in same group (optional, but good UX)
+            // Uncomment if you want only one open at a time
+            /* 
+            const currentSection = header.closest('.accordion-section');
+            currentSection.querySelectorAll('.accordion-body').forEach(item => {
+                if(item !== body) {
+                    item.style.maxHeight = null;
+                    item.previousElementSibling.classList.remove('active');
+                }
+            });
+            */
+
+            header.classList.toggle('active');
+
+            if (body.style.maxHeight) {
+                body.style.maxHeight = null;
+            } else {
+                body.style.maxHeight = body.scrollHeight + "px";
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Ventas - Malvaviscos Modelados</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <style>
+        /* Fonts */
+
+        @font-face {
+            font-family: 'AlibabaPuHuiTi-Bold';
+            src: url('https://assets-persist.lovart.ai/agent-static-assets/Alibaba-PuHuiTi-Bold.otf');
+        }
+
+        @font-face {
+            font-family: 'MiSans-Regular';
+            src: url('https://assets-persist.lovart.ai/agent-static-assets/MiSans-Regular.ttf');
+        }
+
+        @font-face {
+            font-family: 'MiSans-Medium';
+            src: url('https://assets-persist.lovart.ai/agent-static-assets/MiSans-Medium.ttf');
+        }
+
+        @font-face {
+            font-family: 'MiSans-Bold';
+            src: url('https://assets-persist.lovart.ai/agent-static-assets/MiSans-Bold.ttf');
+        }
+
+        :root {
+            --green-money: #4CAF50;
+            --green-light: #E8F5E9;
+            --blue-trust: #2196F3;
+            --blue-light: #E3F2FD;
+            --yellow-gold: #FFD700;
+            --yellow-light: #FFF9C4;
+            --pink-soft: #FF69B4;
+            --pink-light: #FCE4EC;
+            --lilac: #DDA0DD;
+            --lilac-light: #F3E5F5;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --radius: 20px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'MiSans-Regular', sans-serif;
+            color: var(--text-dark);
+            background-color: #FAFAFA;
+            width: 100%;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Layout Utilities */
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .flex-center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'AlibabaPuHuiTi-Bold', sans-serif;
+        }
+
+        .section-number {
+            font-size: 5rem;
+            position: absolute;
+            top: -10px;
+            right: 10px;
+            opacity: 0.1;
+            font-weight: bold;
+            font-family: 'AlibabaPuHuiTi-Bold';
+            z-index: 0;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* Header */
+
+        header {
+            background: linear-gradient(135deg, #00C853, #2979FF);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            border-radius: 0 0 60px 60px;
+            margin-bottom: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .money-emoji {
+            font-size: 6rem;
+            animation: float 3s ease-in-out infinite;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 5rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        header h2 {
+            font-size: 2.5rem;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        header .subtitle {
+            font-size: 1.5rem;
+            margin-top: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            display: inline-block;
+            padding: 10px 30px;
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Section Specifics */
+
+        .check-list {
+            list-style: none;
+        }
+
+        .check-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-size: 1.2rem;
+            font-family: 'MiSans-Medium';
+        }
+
+        .check-list li i {
+            margin-right: 15px;
+            font-size: 1.5rem;
+        }
+
+        .copy-box {
+            background: #F5F5F5;
+            border-left: 5px solid;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--white);
+            border: 1px solid #ddd;
+            padding: 5px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .tip-box {
+            background: #FFF8E1;
+            border: 2px dashed #FFD54F;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .tip-box i {
+            font-size: 1.5rem;
+            color: #FFA000;
+        }
+
+        /* Timeline */
+
+        .timeline-container {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 30px;
+        }
+
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #E0E0E0;
+            transform: translateY(-50%);
+            z-index: 0;
+        }
+
+        .timeline-day {
+            position: relative;
+            z-index: 1;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 13%;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .timeline-day.active {
+            border-color: var(--green-money);
+        }
+
+        .timeline-day h4 {
+            color: var(--blue-trust);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .checkbox-round {
+            width: 24px;
+            height: 24px;
+            border: 2px solid #ddd;
+            border-radius: 50%;
+            margin: 10px auto 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .timeline-day:hover .checkbox-round {
+            background: var(--green-money);
+            border-color: var(--green-money);
+        }
+
+        /* Catalog Card Style */
+
+        .catalog-preview {
+            display: flex;
+            gap: 20px;
+            background: #f0f4f8;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .catalog-img {
+            width: 120px;
+            height: 120px;
+            background: #ddd;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 2rem;
+        }
+
+        .catalog-info h4 {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+        }
+
+        /* Social Media Grid */
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .social-item {
+            background: var(--pink-light);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            color: #C2185B;
+        }
+
+        .social-item i {
+            font-size: 2rem;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        /* Promos */
+
+        .promo-card {
+            background: var(--yellow-light);
+            border: 2px solid var(--yellow-gold);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .promo-card h4 {
+            color: #F57F17;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+
+        .summary-section {
+            background: linear-gradient(45deg, #111, #333);
+            color: #FFD700;
+            padding: 60px;
+            border-radius: 30px;
+            text-align: center;
+            margin: 60px 0;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .summary-list {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .summary-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .summary-item i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: #FFD700;
+        }
+
+        /* Animations */
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Colors for Sections */
+
+        .sec-green .section-title {
+            color: var(--green-money);
+        }
+
+        .sec-green .check-list li i {
+            color: var(--green-money);
+        }
+
+        .sec-blue .section-title {
+            color: var(--blue-trust);
+        }
+
+        .sec-blue .check-list li i {
+            color: var(--blue-trust);
+        }
+
+        .sec-pink .section-title {
+            color: #E91E63;
+        }
+
+        .sec-yellow .section-title {
+            color: #FBC02D;
+        }
+
+        .price-tag {
+            background: linear-gradient(90deg, #FFC107, #FF9800);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 900px) {
+            .container {
+                padding: 20px;
+            }
+
+            .grid-2,
+            .grid-3,
+            .grid-4 {
+                grid-template-columns: 1fr !important;
+            }
+
+            header {
+                padding: 40px 20px;
+                border-radius: 0 0 30px 30px;
+            }
+
+            .money-emoji {
+                font-size: 4rem;
+            }
+
+            header h1 {
+                font-size: 3rem;
+            }
+
+            header h2 {
+                font-size: 1.5rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .section-number {
+                font-size: 3rem;
+                top: 0;
+                right: 0;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            /* Timeline Mobile */
+            .timeline-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .timeline-container::before {
+                width: 4px;
+                height: 100%;
+                left: 20px;
+                top: 0;
+                transform: none;
+            }
+
+            .timeline-day {
+                width: 100%;
+                text-align: left;
+                padding-left: 60px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .checkbox-round {
+                position: absolute;
+                left: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                margin: 0;
+            }
+
+            /* Catalog */
+            .catalog-preview {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .catalog-info div {
+                justify-content: center !important;
+            }
+
+            .summary-section {
+                padding: 30px;
+            }
+
+            .summary-list {
+                gap: 20px;
+            }
+
+            .summary-item {
+                width: 45%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <span class="money-emoji">💰</span>
+            <h1>Guía de Ventas</h1>
+            <h2>Malvaviscos Modelados</h2>
+            <div class="subtitle">Cómo vender en redes sociales y en tu ciudad</div>
+        </div>
+        <!-- Decorative blobs -->
+        <div
+            style="position: absolute; top: -50px; left: -50px; width: 300px; height: 300px; background: rgba(255,255,255,0.1); border-radius: 50%;">
+        </div>
+        <div
+            style="position: absolute; bottom: -50px; right: -50px; width: 400px; height: 400px; background: rgba(255,255,255,0.1); border-radius: 50%;">
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- Row 1: Product Definition & Catalog -->
+        <div class="grid-2" style="margin-bottom: 40px;">
+            <!-- Section 1 -->
+            <section class="card sec-green" style="background: var(--green-light);">
+                <span class="section-number">01</span>
+                <h3 class="section-title"><i class="ri-store-3-line"></i> Define qué vas a vender</h3>
+                <p style="margin-bottom: 20px; font-size: 1.1rem;">Antes de promocionar, elige tu "Menú" fijo de 3 a 5
+                    productos estrella.</p>
+                <ul class="check-list">
+                    <li><i class="ri-checkbox-circle-fill"></i> Toppers para pastel (Personalizados)</li>
+                    <li><i class="ri-checkbox-circle-fill"></i> Recuerditos (1-2 figuras + empaque)</li>
+                    <li><i class="ri-checkbox-circle-fill"></i> Mini Kits (3-6 unidades)</li>
+                    <li><i class="ri-checkbox-circle-fill"></i> Cajitas Regalo (Tema + Moño)</li>
+                    <li><i class="ri-checkbox-circle-fill"></i> Decoración de Mesa (Granel)</li>
+                </ul>
+                <div class="tip-box">
+                    <i class="ri-lightbulb-flash-line"></i>
+                    <div>
+                        <strong>Tip de Inicio:</strong> Empieza con figuras rápidas: 🐰 Conejo, 🌸 Flor, ❤️ Corazón, ⭐
+                        Estrella.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2 -->
+            <section class="card sec-blue" style="background: var(--blue-light);">
+                <span class="section-number">02</span>
+                <h3 class="section-title"><i class="ri-booklet-line"></i> Catálogo Sencillo</h3>
+                <p style="margin-bottom: 20px; font-size: 1.1rem;">No necesitas web. Tu catálogo debe tener:</p>
+                <div class="grid-2">
+                    <ul class="check-list" style="font-size: 1rem;">
+                        <li><i class="ri-image-line"></i> Foto bonita</li>
+                        <li><i class="ri-ruler-line"></i> Tamaño (cm)</li>
+                        <li><i class="ri-time-line"></i> Tiempo preparación</li>
+                    </ul>
+                    <ul class="check-list" style="font-size: 1rem;">
+                        <li><i class="ri-price-tag-3-line"></i> Precio base</li>
+                        <li><i class="ri-calendar-check-line"></i> Duración</li>
+                        <li><i class="ri-text"></i> Nombre claro</li>
+                    </ul>
+                </div>
+                <div class="catalog-preview"
+                    style="margin-top: 20px; background: white; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                    <div class="catalog-img"><i class="ri-cake-3-line"></i></div>
+                    <div class="catalog-info">
+                        <h4>Topper Personalizado</h4>
+                        <p style="color: #666; font-size: 0.9rem; margin-bottom: 10px;">Nombre + 1 Personaje a elección
+                        </p>
+                        <div style="display: flex; align-items: center; justify-content: space-between;">
+                            <span style="font-size: 0.9rem; color: #888;"><i class="ri-time-line"></i> 3 días</span>
+                            <span style="color: var(--green-money); font-weight: bold; font-size: 1.2rem;">$XX.00</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Row 2: Pricing & Social -->
+        <div class="grid-3" style="margin-bottom: 40px; grid-template-columns: 1.2fr 1.8fr 1fr;">
+
+            <!-- Section 3: Pricing -->
+            <section class="card sec-yellow">
+                <span class="section-number">03</span>
+                <h3 class="section-title"><i class="ri-calculator-line"></i> Calcular Precio</h3>
+                <div
+                    style="background: #FFF9C4; padding: 15px; border-radius: 10px; text-align: center; margin-bottom: 20px;">
+                    <strong style="color: #FBC02D; font-size: 1.2rem;">Fórmula Mágica</strong>
+                    <div style="display: flex; justify-content: space-around; margin-top: 10px; font-weight: bold;">
+                        <span>Materiales</span> <span>+</span> <span>Tiempo</span> <span>+</span> <span>Ganancia</span>
+                    </div>
+                </div>
+                <div style="display: grid; gap: 10px;">
+                    <div style="background: #f5f5f5; padding: 10px; border-radius: 8px; border-left: 4px solid #ddd;">🍭
+                        Mini Simple (Barato)</div>
+                    <div style="background: #f5f5f5; padding: 10px; border-radius: 8px; border-left: 4px solid #bbb;">🎨
+                        Detallada (Medio)</div>
+                    <div style="background: #f5f5f5; padding: 10px; border-radius: 8px; border-left: 4px solid #999;">🎂
+                        Topper (Alto)</div>
+                    <div
+                        style="background: #f5f5f5; padding: 10px; border-radius: 8px; border-left: 4px solid #FFD700;">
+                        🎁 Kit Fiesta (Premium)</div>
+                </div>
+            </section>
+
+            <!-- Section 4: Social Media -->
+            <section class="card sec-pink" style="background: #FFF0F5;">
+                <span class="section-number">04</span>
+                <h3 class="section-title"><i class="ri-instagram-line"></i> Instagram & TikTok</h3>
+                <p style="margin-bottom: 15px;">El secreto es VIDEO. Muestra el proceso.</p>
+                <div class="social-grid">
+                    <div class="social-item"><i class="ri-movie-line"></i><small>Desde cero</small></div>
+                    <div class="social-item"><i class="ri-mic-line"></i><small>ASMR</small></div>
+                    <div class="social-item"><i class="ri-gift-line"></i><small>Empacando</small></div>
+                    <div class="social-item"><i class="ri-layout-masonry-line"></i><small>Mesa Lista</small></div>
+                    <div class="social-item"><i class="ri-user-smile-line"></i><small>Pedido Cliente</small></div>
+                    <div class="social-item"><i class="ri-calendar-event-line"></i><small>Tema Semanal</small></div>
+                </div>
+                <div
+                    style="margin-top: 20px; text-align: center; background: white; padding: 10px; border-radius: 30px; font-weight: bold; color: #E91E63;">
+                    <i class="ri-refresh-line"></i> 3 Reels/semana + Stories Diarias
+                </div>
+            </section>
+
+            <!-- Section 5: Scripts (Part 1) -->
+            <section class="card sec-lilac" style="background: #F3E5F5;">
+                <span class="section-number">05</span>
+                <h3 class="section-title" style="color: #9C27B0;"><i class="ri-file-text-line"></i> Copy & Paste</h3>
+
+                <div class="copy-box" style="border-color: #AB47BC;">
+                    <button class="copy-btn"><i class="ri-file-copy-line"></i> Copiar</button>
+                    <strong>✨ Topper Personalizado</strong>
+                    <p style="font-size: 0.9rem; margin-top: 5px;">¡Haz que tu pastel brille! 💛<br>Tema + Nombre a tu
+                        gusto.<br>📲 Pedidos por DM</p>
+                </div>
+                <div class="copy-box" style="border-color: #AB47BC;">
+                    <button class="copy-btn"><i class="ri-file-copy-line"></i> Copiar</button>
+                    <strong>⚠️ Urgencia</strong>
+                    <p style="font-size: 0.9rem; margin-top: 5px;">¡Agenda casi llena! 😱<br>Asegura tu fecha hoy mismo.
+                    </p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Row 3: Local Sales & Alliances -->
+        <div class="grid-2" style="margin-bottom: 40px;">
+            <!-- Section 6: Local -->
+            <section class="card sec-green">
+                <span class="section-number">06</span>
+                <h3 class="section-title"><i class="ri-map-pin-user-line"></i> Clientes en tu Ciudad</h3>
+                <div class="grid-4" style="text-align: center;">
+                    <div><i class="ri-store-2-fill"
+                            style="font-size: 2rem; color: var(--green-money);"></i><br><small>Pastelerías</small></div>
+                    <div><i class="ri-cup-fill"
+                            style="font-size: 2rem; color: var(--green-money);"></i><br><small>Cafeterías</small></div>
+                    <div><i class="ri-balloon-fill"
+                            style="font-size: 2rem; color: var(--green-money);"></i><br><small>Salones</small></div>
+                    <div><i class="ri-parent-fill"
+                            style="font-size: 2rem; color: var(--green-money);"></i><br><small>Escuelas</small></div>
+                </div>
+                <div class="copy-box" style="margin-top: 20px; border-color: var(--green-money); background: #E8F5E9;">
+                    <strong>🗣️ Script Presencial:</strong> "Hola, hago toppers personalizados. ¿Puedo dejarte unas
+                    muestras y mi catálogo para tus clientes? Es un plus para tus pasteles."
+                </div>
+            </section>
+
+            <!-- Section 7: Alliances -->
+            <section class="card sec-blue">
+                <span class="section-number">07</span>
+                <h3 class="section-title"><i class="ri-shake-hands-line"></i> Alianzas Estratégicas</h3>
+                <div style="display: flex; gap: 20px; margin-bottom: 20px;">
+                    <div style="flex: 1;">
+                        <strong>¿Con quién?</strong>
+                        <ul class="check-list" style="font-size: 0.9rem; margin-top: 10px;">
+                            <li><i class="ri-user-heart-line"></i> Reposteras</li>
+                            <li><i class="ri-palette-line"></i> Decoradoras</li>
+                            <li><i class="ri-camera-lens-line"></i> Fotógrafos</li>
+                        </ul>
+                    </div>
+                    <div style="flex: 1; border-left: 2px solid #eee; padding-left: 20px;">
+                        <strong>¿Qué ofreces?</strong>
+                        <div
+                            style="background: #E3F2FD; padding: 10px; border-radius: 8px; margin-bottom: 5px; font-size: 0.9rem;">
+                            💎 Descuento Socios</div>
+                        <div
+                            style="background: #E3F2FD; padding: 10px; border-radius: 8px; margin-bottom: 5px; font-size: 0.9rem;">
+                            💸 Comisión Venta</div>
+                        <div style="background: #E3F2FD; padding: 10px; border-radius: 8px; font-size: 0.9rem;">📦
+                            Paquete Combo</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Row 4: Promos, Trust & Delivery -->
+        <div class="grid-3" style="margin-bottom: 40px;">
+            <!-- Section 8 -->
+            <section class="card sec-yellow">
+                <span class="section-number">08</span>
+                <h3 class="section-title"><i class="ri-price-tag-2-line"></i> Promociones</h3>
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <div class="promo-card">
+                        <h4>🎉 Combo Fiesta</h4>
+                        <small>1 Topper + 10 Recuerditos = Precio Especial</small>
+                    </div>
+                    <div class="promo-card" style="border-color: #FFA000; background: #FFF3E0;">
+                        <h4>🎁 Regalito Extra</h4>
+                        <small>Compra 20 y te regalo 2 más</small>
+                    </div>
+                    <div class="promo-card" style="border-color: #F44336; background: #FFEBEE;">
+                        <h4>⏳ Oferta Tiempo</h4>
+                        <small>"Solo por hoy: Tema Conejito"</small>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 9 -->
+            <section class="card sec-pink">
+                <span class="section-number">09</span>
+                <h3 class="section-title"><i class="ri-shield-check-line"></i> Generar Confianza</h3>
+                <ul class="check-list" style="font-size: 1rem;">
+                    <li><i class="ri-star-fill" style="color: gold;"></i> Opiniones Clientes</li>
+                    <li><i class="ri-video-line"></i> Videos Empacando</li>
+                    <li><i class="ri-camera-line"></i> Fotos Reales (Sin filtro)</li>
+                    <li><i class="ri-contrast-drop-line"></i> Antes / Después (Secado)</li>
+                </ul>
+                <div style="margin-top: 15px; border-top: 2px dashed #eee; padding-top: 15px;">
+                    <strong>Siempre menciona:</strong>
+                    <div style="display: flex; flex-wrap: wrap; gap: 5px; margin-top: 5px;">
+                        <span class="tag" style="background: #eee;">Artesanal</span>
+                        <span class="tag" style="background: #eee;">Personalizado</span>
+                        <span class="tag" style="background: #eee;">Bien Empacado</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 10 -->
+            <section class="card sec-green" style="background: #E0F2F1;">
+                <span class="section-number">10</span>
+                <h3 class="section-title" style="color: #009688;"><i class="ri-truck-line"></i> Entrega</h3>
+                <div class="grid-2" style="margin-top: 20px;">
+                    <div style="background: white; padding: 15px; border-radius: 10px; text-align: center;">
+                        <i class="ri-home-heart-line" style="font-size: 2rem; color: #009688;"></i>
+                        <div>Retiro</div>
+                    </div>
+                    <div style="background: white; padding: 15px; border-radius: 10px; text-align: center;">
+                        <i class="ri-motorbike-line" style="font-size: 2rem; color: #009688;"></i>
+                        <div>Envío ($)</div>
+                    </div>
+                </div>
+                <div class="tip-box" style="margin-top: 15px; border-color: #009688; color: #004D40;">
+                    <i class="ri-alarm-warning-line" style="color: #009688;"></i>
+                    <small><strong>Anticipación:</strong> Mínimo 2-4 días.</small>
+                </div>
+            </section>
+        </div>
+
+        <!-- Section 11: Responses & Section 12: Strategy -->
+        <div class="grid-2" style="margin-bottom: 40px; grid-template-columns: 1fr 2fr;">
+            <!-- Section 11 -->
+            <section class="card sec-lilac">
+                <span class="section-number">11</span>
+                <h3 class="section-title" style="color: #9C27B0;"><i class="ri-chat-smile-2-line"></i> Respuestas
+                    Rápidas</h3>
+
+                <div class="copy-box" style="border-left-color: #CE93D8; background: #F3E5F5;">
+                    <button class="copy-btn"><i class="ri-file-copy-line"></i></button>
+                    <strong>💰 ¿Precio?</strong>
+                    <p style="font-size: 0.9rem;">"Hola! Dime tema, cantidad y fecha. Así te doy opciones exactas 😍"
+                    </p>
+                </div>
+                <div class="copy-box" style="border-left-color: #CE93D8; background: #F3E5F5;">
+                    <button class="copy-btn"><i class="ri-file-copy-line"></i></button>
+                    <strong>🎨 ¿Personalizas?</strong>
+                    <p style="font-size: 0.9rem;">"¡Sí claro! Cualquier color, tema y nombre. 😊"</p>
+                </div>
+                <div class="copy-box" style="border-left-color: #CE93D8; background: #F3E5F5;">
+                    <button class="copy-btn"><i class="ri-file-copy-line"></i></button>
+                    <strong>🕒 ¿Duración?</strong>
+                    <p style="font-size: 0.9rem;">"Dura mucho en lugar fresco y seco. No refri. 😊"</p>
+                </div>
+            </section>
+
+            <!-- Section 12 -->
+            <section class="card sec-blue" style="background: linear-gradient(to bottom, #fff, #F1F8E9);">
+                <span class="section-number">12</span>
+                <h3 class="section-title"><i class="ri-rocket-line"></i> Estrategia 7 Días</h3>
+                <div class="timeline-container">
+                    <div class="timeline-day active">
+                        <h4>Día 1-2</h4>
+                        <div style="font-size: 0.8rem;">Crear 10 modelos & Fotos</div>
+                        <div class="checkbox-round"><i class="ri-check-line"></i></div>
+                    </div>
+                    <div class="timeline-day">
+                        <h4>Día 3</h4>
+                        <div style="font-size: 0.8rem;">Catálogo en Stories</div>
+                        <div class="checkbox-round"></div>
+                    </div>
+                    <div class="timeline-day">
+                        <h4>Día 4</h4>
+                        <div style="font-size: 0.8rem;">Reel Modelando</div>
+                        <div class="checkbox-round"></div>
+                    </div>
+                    <div class="timeline-day">
+                        <h4>Día 5</h4>
+                        <div style="font-size: 0.8rem;">Reel Empaque</div>
+                        <div class="checkbox-round"></div>
+                    </div>
+                    <div class="timeline-day">
+                        <h4>Día 6</h4>
+                        <div style="font-size: 0.8rem;">Agenda Abierta</div>
+                        <div class="checkbox-round"></div>
+                    </div>
+                    <div class="timeline-day">
+                        <h4>Día 7</h4>
+                        <div style="font-size: 0.8rem;">Promo & Ventas</div>
+                        <div class="checkbox-round"></div>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 30px; font-weight: bold; color: var(--green-money);">
+                    ¡Sigue el plan y verás resultados! 🚀
+                </div>
+            </section>
+        </div>
+
+        <!-- Summary Footer -->
+        <div class="summary-section">
+            <h2 style="font-size: 2.5rem; text-transform: uppercase; letter-spacing: 2px;">🔥 Lo más importante</h2>
+            <div class="summary-list">
+                <div class="summary-item">
+                    <i class="ri-gift-line"></i>
+                    <span>Producto<br>Bonito</span>
+                </div>
+                <div class="summary-item">
+                    <i class="ri-camera-lens-line"></i>
+                    <span>Fotos &<br>Videos</span>
+                </div>
+                <div class="summary-item">
+                    <i class="ri-book-open-line"></i>
+                    <span>Catálogo<br>Simple</span>
+                </div>
+                <div class="summary-item">
+                    <i class="ri-group-line"></i>
+                    <span>Alianzas<br>Locales</span>
+                </div>
+                <div class="summary-item">
+                    <i class="ri-magic-line"></i>
+                    <span>Personalización<br>(Más $$)</span>
+                </div>
+            </div>
+            <div style="margin-top: 40px; font-size: 1.5rem; font-family: 'MiSans-Medium';">
+                ¡Ahora a vender y crecer tu negocio! 💰✨
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

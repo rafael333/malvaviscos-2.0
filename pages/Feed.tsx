@@ -77,19 +77,16 @@ const Feed: React.FC<FeedProps> = ({ onBack, onHomeClick, onProfileClick, onFavo
       <nav className="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] bg-white/90 dark:bg-[#1b120d]/90 backdrop-blur-xl shadow-2xl rounded-full px-6 py-3 border border-black/5 flex items-center justify-between z-50">
         <button onClick={onHomeClick} className="flex flex-col items-center gap-1 text-[#9a664c] dark:text-white/40 cursor-pointer hover:text-primary transition-all active:scale-90">
           <span className="material-symbols-outlined">home</span>
-          <span className="text-[10px] font-bold">Início</span>
+          <span className="text-[10px] font-bold">Inicio</span>
         </button>
-        <button onClick={onHomeClick} className="flex flex-col items-center gap-1 text-[#9a664c] dark:text-white/40 cursor-pointer hover:text-primary transition-all active:scale-90">
-          <span className="material-symbols-outlined">menu_book</span>
-          <span className="text-[10px] font-bold">Cursos</span>
-        </button>
-        <button onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} className="flex flex-col items-center gap-1 text-primary cursor-pointer scale-110 transition-transform duration-300">
+
+        <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="flex flex-col items-center gap-1 text-primary cursor-pointer scale-110 transition-transform duration-300">
           <span className="material-symbols-outlined fill-icon">dynamic_feed</span>
           <span className="text-[10px] font-bold">Feed</span>
         </button>
         <button onClick={onFavoritesClick} className="flex flex-col items-center gap-1 text-[#9a664c] dark:text-white/40 cursor-pointer hover:text-primary transition-all active:scale-90">
           <span className="material-symbols-outlined">favorite</span>
-          <span className="text-[10px] font-bold">Favoritos</span>
+          <span className="text-[10px] font-bold">Contenido</span>
         </button>
         <button onClick={onProfileClick} className="flex flex-col items-center gap-1 text-[#9a664c] dark:text-white/40 cursor-pointer hover:text-primary transition-all active:scale-90">
           <span className="material-symbols-outlined">person</span>

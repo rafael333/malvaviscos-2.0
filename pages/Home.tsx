@@ -134,19 +134,15 @@ const Home: React.FC<HomeProps> = ({ onLessonClick, onProfileClick, onFeedClick,
           <span className="material-symbols-outlined fill-icon">home</span>
           <span className="text-[10px] font-bold">Inicio</span>
         </button>
-        <button onClick={onCoursesClick} className="flex flex-col items-center gap-1 text-[#9a664c] dark:text-white/40 cursor-pointer hover:text-primary transition-all active:scale-90">
-          <span className="material-symbols-outlined">menu_book</span>
-          <span className="text-[10px] font-bold">Cursos</span>
-        </button>
+
         <button disabled className="flex flex-col items-center gap-1 text-[#9a664c]/40 dark:text-white/20 cursor-not-allowed opacity-50 relative">
           <div className="absolute -top-2 -right-2 bg-red-500 text-white text-[8px] font-bold px-2 py-1 rounded-full shadow-lg">Mantenimiento</div>
           <span className="material-symbols-outlined">dynamic_feed</span>
           <span className="text-[10px] font-bold">Próximamente</span>
         </button>
-        <button disabled className="flex flex-col items-center gap-1 text-[#9a664c]/40 dark:text-white/20 cursor-not-allowed opacity-50 relative">
-          <div className="absolute -top-2 -right-2 bg-red-500 text-white text-[8px] font-bold px-2 py-1 rounded-full shadow-lg">Mantenimiento</div>
+        <button onClick={onFavoritesClick} className="flex flex-col items-center gap-1 text-[#9a664c] dark:text-white/40 cursor-pointer hover:text-primary transition-all active:scale-90">
           <span className="material-symbols-outlined">favorite</span>
-          <span className="text-[10px] font-bold">Próximamente</span>
+          <span className="text-[10px] font-bold">Contenido</span>
         </button>
         <button disabled className="flex flex-col items-center gap-1 text-[#9a664c]/40 dark:text-white/20 cursor-not-allowed opacity-50 relative">
           <div className="absolute -top-2 -right-2 bg-red-500 text-white text-[8px] font-bold px-2 py-1 rounded-full shadow-lg">Mantenimiento</div>

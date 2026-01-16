@@ -5,8 +5,9 @@ export const tutorials: Tutorial[] = [
         id: '1',
         title: 'Receta de Malvaviscos Caseros (Nubes)',
         duration: '7:33',
+
         category: 'Decoración',
-        imageUrl: '/aeracao-nuvens.png',
+        imageUrl: '/cloud_marshmallows_cover.png',
         description: 'Este video enseña a hacer figuras de animales utilizando una receta simple de malvaviscos (nubes)',
         videoUrl: 'https://youtu.be/7vx3uRtXN28',
         ingredients: [
@@ -36,7 +37,7 @@ export const tutorials: Tutorial[] = [
         title: 'Malvavisco Unicornio',
         duration: '5:27',
         category: 'Decoración',
-        imageUrl: '/unicorn-marshmallow.webp',
+        imageUrl: '/unicorn_marshmallow_cover.png',
         description: 'Este video se enfoca en el arte de la finalización decorativa, enseñando cómo dibujar rostos delicados y expresivos en malvaviscos de nubes. Aprenderás técnicas de pintura manual y el uso de herramientas específicas para asegurar que cada dulce tenga un acabado profesional y encantador',
         videoUrl: 'https://youtu.be/NkHc2Qz5U9I',
         ingredients: [
@@ -61,7 +62,7 @@ export const tutorials: Tutorial[] = [
         duration: '03:22',
         category: 'Principiante',
         isPopular: true,
-        imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBwFlUUkZTzAurQbZJCQ-W5VJCEAVEMwS6UcaHgS753mGzhv17nqTMSFQdnnzbesaJPTvPYFLQybVYds1PjCMeOVpWbUAiLCNPTXYQM5_W2ELJ3Z7ni896BlaKavZipXFfrFLSu_wPLukmLN51hnPNvTKKlNra8EZFuFHFqdpsjV5x1RX1XFTaC0VYz6QL6sBnbYYeFduEXQzMFD5zHN2lHcb1Su9_b0912BPKVIm3D3Zoz1PzKj_dIAmhd50lu-twdF6gl2f1KTtsC',
+        imageUrl: '/highlight_marshmallow_cover.png',
         description: 'Este video es un tutorial detallado que enseña cómo hacer malvaviscos caseros en forma de \'nubes\' de manera artesanal.',
         videoUrl: 'https://youtu.be/IfdnqLMZ16A',
         steps: []
@@ -72,7 +73,7 @@ export const tutorials: Tutorial[] = [
         duration: '5:27',
         category: 'Decoración',
         isPopular: true,
-        imageUrl: '/unicorn-marshmallow.webp',
+        imageUrl: '/unicorn_marshmallow_cover.png',
         description: 'Este video se enfoca en el arte de la finalización decorativa, enseñando cómo dibujar rostos delicados y expresivos en malvaviscos de nubes.',
         videoUrl: 'https://youtu.be/NkHc2Qz5U9I',
         steps: []
@@ -83,7 +84,7 @@ export const tutorials: Tutorial[] = [
         duration: '03:22',
         category: 'Principiante',
         isHighlight: true,
-        imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBwFlUUkZTzAurQbZJCQ-W5VJCEAVEMwS6UcaHgS753mGzhv17nqTMSFQdnnzbesaJPTvPYFLQybVYds1PjCMeOVpWbUAiLCNPTXYQM5_W2ELJ3Z7ni896BlaKavZipXFfrFLSu_wPLukmLN51hnPNvTKKlNra8EZFuFHFqdpsjV5x1RX1XFTaC0VYz6QL6sBnbYYeFduEXQzMFD5zHN2lHcb1Su9_b0912BPKVIm3D3Zoz1PzKj_dIAmhd50lu-twdF6gl2f1KTtsC',
+        imageUrl: '/highlight_marshmallow_cover.png',
         description: 'Este video es un tutorial detallado que enseña cómo hacer malvaviscos caseros en forma de \'nubes\' de manera artesanal. El contenido se enfoca en técnicas de repostería para obtener la textura ideal y el acabado visual necesario para este tipo de dulce decorado',
         videoUrl: 'https://youtu.be/IfdnqLMZ16A',
         ingredients: [
