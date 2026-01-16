@@ -11,8 +11,11 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
+        console.log('Form submitted', { name, email });
         if (name.trim() && email.trim()) {
             onLogin(name.trim(), email.trim());
+        } else {
+            console.warn('Validation failed');
         }
     };
 

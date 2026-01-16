@@ -59,11 +59,17 @@ const App: React.FC = () => {
   }, []);
 
   const handleLogin = (name: string, email: string) => {
+    console.log('Login attempt:', name, email);
     const userData = { name, email };
+
+    // Set user state
     setUser(userData);
     localStorage.setItem('user', JSON.stringify(userData));
-    // Reset history stack on login
-    window.history.replaceState({ page: 'home' }, '');
+
+    // Reset history stack on login, deferred to ensure state updates first
+    setTimeout(() => {
+      window.history.replaceState({ page: 'home' }, '');
+    }, 0);
   };
 
   const navigateToLesson = (id?: string) => {
