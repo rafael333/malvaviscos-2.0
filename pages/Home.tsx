@@ -48,7 +48,7 @@ const Home: React.FC<HomeProps> = ({ onLessonClick, onProfileClick, onFeedClick,
 
       <section className="px-4 mt-2" onClick={() => onLessonClick(highlightDate.id)}>
         <div
-          className="bg-cover bg-center flex flex-col justify-end overflow-hidden rounded-xl min-h-80 relative group cursor-pointer shadow-lg"
+          className="bg-cover bg-center flex flex-col justify-end overflow-hidden rounded-xl min-h-80 md:min-h-[500px] relative group cursor-pointer shadow-lg transition-transform hover:scale-[1.01]"
           style={{
             backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.7) 100%), url("${highlightDate.imageUrl}")`
           }}
@@ -57,12 +57,12 @@ const Home: React.FC<HomeProps> = ({ onLessonClick, onProfileClick, onFeedClick,
             Destacado
           </div>
           <div className="flex flex-col p-6 gap-2">
-            <h1 className="text-white text-2xl font-bold leading-tight">{highlightDate.title}</h1>
+            <h1 className="text-white text-2xl md:text-4xl font-bold leading-tight">{highlightDate.title}</h1>
             <div className="flex items-center gap-3">
-              <span className="flex items-center gap-1 text-white/90 text-[10px] bg-white/20 backdrop-blur-md px-2 py-1 rounded-full font-bold uppercase tracking-wider">
+              <span className="flex items-center gap-1 text-white/90 text-[10px] md:text-xs bg-white/20 backdrop-blur-md px-2 py-1 rounded-full font-bold uppercase tracking-wider">
                 <span className="material-symbols-outlined text-sm">play_circle</span> {highlightDate.duration}
               </span>
-              <span className="flex items-center gap-1 text-white/90 text-[10px] bg-white/20 backdrop-blur-md px-2 py-1 rounded-full font-bold uppercase tracking-wider">
+              <span className="flex items-center gap-1 text-white/90 text-[10px] md:text-xs bg-white/20 backdrop-blur-md px-2 py-1 rounded-full font-bold uppercase tracking-wider">
                 <span className="material-symbols-outlined text-sm">star</span> {highlightDate.category}
               </span>
             </div>
@@ -75,7 +75,7 @@ const Home: React.FC<HomeProps> = ({ onLessonClick, onProfileClick, onFeedClick,
           <h2 className="text-[#1b120d] dark:text-white text-xl font-bold tracking-tight">Nuevas Técnicas</h2>
           <button onClick={() => { }} className="text-primary text-sm font-bold">Ver todo</button>
         </div>
-        <div className="flex overflow-x-auto hide-scrollbar px-4 gap-4 py-2">
+        <div className="flex overflow-x-auto hide-scrollbar px-4 gap-4 py-2 md:grid md:grid-cols-3 lg:grid-cols-4 md:overflow-visible">
           {techniques.map(t => (
             <div key={t.id} className="flex flex-col gap-3 min-w-[180px] group cursor-pointer" onClick={() => onLessonClick(t.id)}>
               <div
@@ -95,7 +95,7 @@ const Home: React.FC<HomeProps> = ({ onLessonClick, onProfileClick, onFeedClick,
         <div className="flex items-center justify-between px-4 pb-2">
           <h2 className="text-[#1b120d] dark:text-white text-xl font-bold tracking-tight">Más Populares</h2>
         </div>
-        <div className="px-4 flex flex-col gap-3">
+        <div className="px-4 flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 gap-3">
           {popular.map(p => (
             <div key={p.id} onClick={() => onLessonClick(p.id)} className="flex items-center gap-4 bg-white dark:bg-white/5 p-3 rounded-xl border border-black/5 group cursor-pointer hover:bg-marshmallow-pink/30 dark:hover:bg-primary/5 transition-colors">
               <div
@@ -118,9 +118,9 @@ const Home: React.FC<HomeProps> = ({ onLessonClick, onProfileClick, onFeedClick,
         <div className="flex items-center justify-between px-4 pb-2">
           <h2 className="text-[#1b120d] dark:text-white text-xl font-bold tracking-tight">Consejos del Chef</h2>
         </div>
-        <div className="flex overflow-x-auto hide-scrollbar px-4 gap-3 py-2">
+        <div className="flex overflow-x-auto hide-scrollbar px-4 gap-3 py-2 md:grid md:grid-cols-3">
           {tips.map(tip => (
-            <div key={tip.id} className="min-w-[140px] bg-primary/5 dark:bg-primary/20 p-4 rounded-xl border border-primary/20 flex flex-col gap-2">
+            <div key={tip.id} className="min-w-[140px] bg-primary/5 dark:bg-primary/20 p-4 rounded-xl border border-primary/20 flex flex-col gap-2 transition-transform hover:scale-105">
               <span className="material-symbols-outlined text-primary text-3xl">{tip.icon}</span>
               <p className="text-[#1b120d] dark:text-white text-[11px] font-bold leading-tight">{tip.title}</p>
               <p className="text-[#9a664c] dark:text-white/80 text-[10px]">{tip.subtitle}</p>
@@ -129,16 +129,15 @@ const Home: React.FC<HomeProps> = ({ onLessonClick, onProfileClick, onFeedClick,
         </div>
       </section>
 
-      <nav className="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] bg-white/90 dark:bg-[#1b120d]/90 backdrop-blur-xl shadow-2xl rounded-full px-6 py-3 border border-black/5 flex items-center justify-between z-50">
+      <nav className="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] md:w-[400px] bg-white/90 dark:bg-[#1b120d]/90 backdrop-blur-xl shadow-2xl rounded-full px-6 py-3 border border-black/5 flex items-center justify-between z-50">
         <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="flex flex-col items-center gap-1 text-primary cursor-pointer scale-110 transition-transform duration-300">
           <span className="material-symbols-outlined fill-icon">home</span>
           <span className="text-[10px] font-bold">Inicio</span>
         </button>
 
-        <button disabled className="flex flex-col items-center gap-1 text-[#9a664c]/40 dark:text-white/20 cursor-not-allowed opacity-50 relative">
-          <div className="absolute -top-2 -right-2 bg-red-500 text-white text-[8px] font-bold px-2 py-1 rounded-full shadow-lg">Mantenimiento</div>
+        <button onClick={onFeedClick} className="flex flex-col items-center gap-1 text-[#9a664c] dark:text-white/40 cursor-pointer hover:text-primary transition-all active:scale-90">
           <span className="material-symbols-outlined">dynamic_feed</span>
-          <span className="text-[10px] font-bold">Próximamente</span>
+          <span className="text-[10px] font-bold">Comunidad</span>
         </button>
         <button onClick={onFavoritesClick} className="flex flex-col items-center gap-1 text-[#9a664c] dark:text-white/40 cursor-pointer hover:text-primary transition-all active:scale-90">
           <span className="material-symbols-outlined">favorite</span>

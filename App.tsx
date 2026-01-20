@@ -119,7 +119,7 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className="max-w-[480px] mx-auto min-h-screen bg-background-light dark:bg-background-dark relative overflow-x-hidden shadow-2xl text-[#1b120d] dark:text-white">
+    <div className="max-w-7xl mx-auto min-h-screen bg-background-light dark:bg-background-dark relative overflow-x-hidden shadow-2xl text-[#1b120d] dark:text-white">
       {currentPage === 'home' && (
         <Home
           onLessonClick={navigateToLesson}
@@ -134,8 +134,11 @@ const App: React.FC = () => {
         <LessonDetails
           onBack={() => window.history.back()}
           lessonId={selectedLessonId}
+          onHomeClick={navigateToHome}
           onCoursesClick={navigateToCourses}
           onFavoritesClick={navigateToFavorites}
+          onFeedClick={navigateToFeed}
+          onProfileClick={navigateToProfile}
         />
       )}
       {currentPage === 'profile' && (

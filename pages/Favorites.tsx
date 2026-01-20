@@ -58,7 +58,7 @@ const Favorites: React.FC<FavoritesProps> = ({ onBack, onHomeClick, onFeedClick,
           <p className="text-sm text-[#9a664c] dark:text-white/60">Tus guías y manuales técnicos.</p>
         </div>
 
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 md:grid md:grid-cols-2">
           {guides.map(guide => (
             <div
               key={guide.id}
@@ -89,16 +89,15 @@ const Favorites: React.FC<FavoritesProps> = ({ onBack, onHomeClick, onFeedClick,
         </div>
       </div>
 
-      <nav className="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] bg-white/90 dark:bg-[#1b120d]/90 backdrop-blur-xl shadow-2xl rounded-full px-6 py-3 border border-black/5 flex items-center justify-between z-50">
+      <nav className="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] md:w-[400px] bg-white/90 dark:bg-[#1b120d]/90 backdrop-blur-xl shadow-2xl rounded-full px-6 py-3 border border-black/5 flex items-center justify-between z-50">
         <button onClick={onHomeClick} className="flex flex-col items-center gap-1 text-[#9a664c] dark:text-white/40 cursor-pointer hover:text-primary transition-all active:scale-90">
           <span className="material-symbols-outlined">home</span>
           <span className="text-[10px] font-bold">Inicio</span>
         </button>
 
-        <button disabled className="flex flex-col items-center gap-1 text-[#9a664c]/40 dark:text-white/20 cursor-not-allowed opacity-50 relative">
-          <div className="absolute -top-2 -right-2 bg-red-500 text-white text-[8px] font-bold px-2 py-1 rounded-full shadow-lg">Mantenimiento</div>
+        <button onClick={onFeedClick} className="flex flex-col items-center gap-1 text-[#9a664c] dark:text-white/40 cursor-pointer hover:text-primary transition-all active:scale-90">
           <span className="material-symbols-outlined">dynamic_feed</span>
-          <span className="text-[10px] font-bold">Próximamente</span>
+          <span className="text-[10px] font-bold">Comunidad</span>
         </button>
         <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="flex flex-col items-center gap-1 text-primary cursor-pointer scale-110 transition-transform duration-300">
           <span className="material-symbols-outlined fill-icon">favorite</span>
