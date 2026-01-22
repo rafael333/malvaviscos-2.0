@@ -88,6 +88,12 @@ const Home: React.FC<HomeProps> = ({ onLessonClick, onProfileClick, onFeedClick,
               </div>
             </div>
           ))}
+          <div className="flex flex-col gap-3 min-w-[120px] items-center justify-center md:hidden snap-start">
+            <div className="w-full aspect-[4/5] bg-primary/5 dark:bg-white/5 rounded-xl flex items-center justify-center border-2 border-primary/20 border-dashed">
+              <span className="material-symbols-outlined text-primary text-3xl animate-pulse">arrow_forward</span>
+            </div>
+            <div className="h-[38px]"></div>
+          </div>
         </div>
       </section>
 

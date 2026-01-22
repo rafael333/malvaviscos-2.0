@@ -79,11 +79,10 @@ export const tutorials: Tutorial[] = [
         steps: []
     },
     {
-        id: 'highlight',
+        id: '3',
         title: 'Malvavisco casero',
         duration: '03:22',
         category: 'Principiante',
-        isHighlight: true,
         imageUrl: '/highlight_marshmallow_cover.png',
         description: 'Este video es un tutorial detallado que enseña cómo hacer malvaviscos caseros en forma de \'nubes\' de manera artesanal. El contenido se enfoca en técnicas de repostería para obtener la textura ideal y el acabado visual necesario para este tipo de dulce decorado',
         videoUrl: 'https://youtu.be/IfdnqLMZ16A',
@@ -103,6 +102,31 @@ export const tutorials: Tutorial[] = [
             { id: 6, title: 'Desmoldar el malvavisco', isCompleted: false, isLocked: true, startTime: 118 },
             { id: 7, title: 'Corte en tiras y cuadrados', isCompleted: false, isLocked: true, startTime: 148 },
             { id: 8, title: 'Cobertura final con azúcar', isCompleted: false, isLocked: true, startTime: 179 }
+        ]
+    },
+    {
+        id: '4',
+        title: 'CÓMO HACER MALVAVISCOS',
+        duration: '04:30',
+        category: 'Decoración',
+        isHighlight: true,
+        imageUrl: '/cat_paws_marshmallow_cover.png',
+        description: 'Aprende a hacer adorables malvaviscos en forma de huellitas de gato con esta receta detallada.',
+        videoUrl: 'https://youtu.be/69y2gBQomFM',
+        ingredients: [
+            { name: 'Gelatina', icon: 'science', details: '15 g de gelatina sin sabor (o grenetina) y 35 ml de agua' },
+            { name: 'Merengue', icon: 'egg', details: '2 claras de huevo' },
+            { name: 'Almíbar', icon: 'water_drop', details: '135 g de azúcar, 35 ml de agua y 20 g de glucosa' },
+            { name: 'Acabado y color', icon: 'palette', details: 'Colorante vegetal rojo en gel (para tono rosa) y aprox. 500 g de fécula de maíz' }
+        ],
+        steps: [
+            { id: 1, title: 'Preparación de la gelatina', isCompleted: false, isLocked: false, startTime: 10 },
+            { id: 2, title: 'Montaje de las claras', isCompleted: false, isLocked: true, startTime: 20 },
+            { id: 3, title: 'Elaboración del almíbar', isCompleted: false, isLocked: true, startTime: 34 },
+            { id: 4, title: 'Mezcla de los ingredientes', isCompleted: false, isLocked: true, startTime: 60 },
+            { id: 5, title: 'Color y forma', isCompleted: false, isLocked: true, startTime: 95 },
+            { id: 6, title: 'Acabado final', isCompleted: false, isLocked: true, startTime: 187 },
+            { id: 7, title: 'Conservación', isCompleted: false, isLocked: true, startTime: 260 }
         ]
     }
 ];
